@@ -1,0 +1,17 @@
+.page-enter-active, .page-leave-active {
+    transition: opacity 1s;
+}
+.page-enter, .page-leave-active {
+    opacity: 0;
+}
+ .test-enter-active {
+    transition: all 1s;
+    color: rgb(255, 0, 55);
+    
+    
+}
+
+.test-enter{
+    opacity: 0;
+   color: rgb(51, 255, 0);
+}

@@ -3,16 +3,18 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'blog',
+    title: 'this is henry-blog',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Awesome blog' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {rel:'stlesheet',href:'http://fonts.font.im/css?family=Lato:400,700'}
     ]
   },
+  css:['assets/css/main.css'],
   /*
   ** Customize the progress bar color
   */

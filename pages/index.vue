@@ -1,64 +1,58 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        blog
-      </h1>
-      <h2 class="subtitle">
-        Awesome blog
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
+  <section class="container" id="post">
+    <PostPreview
+        v-for="post in posts"
+        :key="post.id"
+        :title="post.title"
+        :excerpt="post.previewText"
+        :thumbnailImage="post.thumbnailUrl"
+        :id="post.id"
+    >
+
+    </PostPreview>
   </section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
-
-export default {
-  components: {
-    AppLogo
+import PostPreview from '../components/Blog/PostPreview'
+  export default {
+      components: {
+          PostPreview
+      },
+      data(){
+          return{
+              posts:[
+                  {
+                      title:'A New Beginnig',
+                      previewText:'This will be awesome,do not miss it!',
+                      thumbnailUrl:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2921719521,4265788220&fm=200&gp=0.jpg',
+                      id:'a-new-beginning'
+                  },
+                   {
+                      title:'A Second Beginnig',
+                      previewText:'This will be awesome,do not miss it!',
+                      thumbnailUrl:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2921719521,4265788220&fm=200&gp=0.jpg',
+                      id:'a-second-beginning'
+                  }
+              ]
+          }
+      }
   }
-}
+
 </script>
 
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<style scoped>
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+#post{
+    padding-top:2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+@media (min-width:35rem){
+    #post{
+        flex-direction: row;
+    }
 }
 </style>
